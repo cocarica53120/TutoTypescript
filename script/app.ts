@@ -5,6 +5,15 @@ import {hello, Test} from '../ex/hello';
 import { Animal, Lion, Sex} from './animal';
 import * as aliasAnimal from './animal';
 
+import { ElementFinder, element, by } from 'protractor';
+
+
+export function usernameInput(): ElementFinder {
+    const ret: ElementFinder =  element(by.css('#okta-signin-username'));
+    console.log("in usernameInput()", ret);
+    return ret;
+}
+
 
 const h = require('../ex/hello');
 
@@ -27,4 +36,7 @@ export function start() {
 }
 
 
-start();
+
+export * from './animal';
+
+// start();
